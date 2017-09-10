@@ -1,0 +1,109 @@
+
+[[_definitions]]
+== Definitions
+
+[[_arithmeticcontroller_badrequestresponse]]
+=== ArithmeticController.BadRequestResponse
+Response model for bad request.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**message** +
+__optional__|Error message. +
+**Example** : `"0 is not permitted."`|string
+|===
+
+
+[[_arithmeticrequest]]
+=== ArithmeticRequest
+Common request model for arithmetic calculation.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**value1** +
+__optional__|Former operand. +
+**Example** : `1`|integer (int32)
+|**value2** +
+__optional__|Latter operand. +
+**Example** : `2`|integer (int32)
+|===
+
+
+[[_arithmeticresponse]]
+=== ArithmeticResponse
+Common response model for arithmetic calculation.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**result** +
+__optional__|Result value. +
+**Example** : `3`|integer (int32)
+|===
+
+
+[[_greetingcontroller_badrequestresponse]]
+=== GreetingController.BadRequestResponse
+Response model for bad request.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**message** +
+__optional__|Error message. +
+**Example** : `"0 is not permitted."`|string
+|===
+
+
+[[_greetingrequest]]
+=== GreetingRequest
+Request model for greeting.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**name** +
+__optional__|Name of the person. +
+**Example** : `"dayflower"`|string
+|**title** +
+__optional__|Title of the person. +
+**Example** : `"Mr."`|string
+|===
+
+
+[[_greetingresponse]]
+=== GreetingResponse
+Response model for greeting.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**message** +
+__optional__|Message from the system. +
+**Example** : `"Hello, Mr. dayflower"`|string
+|===
+
+
+[[_topresponse]]
+=== TopResponse
+Response model for top.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**alive** +
+__optional__|Whether service is available or not. +
+**Example** : `false`|boolean
+|===
+
+
+
