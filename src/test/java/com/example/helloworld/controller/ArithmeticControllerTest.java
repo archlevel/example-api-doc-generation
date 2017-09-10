@@ -4,17 +4,20 @@ import lombok.val;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ArithmeticController.class)
+@AutoConfigureRestDocs(outputDir = "build/snippets", uriHost = "example.com", uriPort = 80)
 public class ArithmeticControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -37,7 +40,8 @@ public class ArithmeticControllerTest {
                                 .accept(MediaType.APPLICATION_JSON)
                                 .content(requestContent))
                .andExpect(status().isOk())
-               .andExpect(content().json(expectedContent));
+               .andExpect(content().json(expectedContent))
+               .andDo(document("Arithmetic_add"));
     }
 
     @Test
@@ -58,7 +62,8 @@ public class ArithmeticControllerTest {
                                 .accept(MediaType.APPLICATION_JSON)
                                 .content(requestContent))
                .andExpect(status().isOk())
-               .andExpect(content().json(expectedContent));
+               .andExpect(content().json(expectedContent))
+               .andDo(document("Arithmetic_sub"));
     }
 
     @Test
@@ -79,7 +84,8 @@ public class ArithmeticControllerTest {
                                 .accept(MediaType.APPLICATION_JSON)
                                 .content(requestContent))
                .andExpect(status().isOk())
-               .andExpect(content().json(expectedContent));
+               .andExpect(content().json(expectedContent))
+               .andDo(document("Arithmetic_mul"));
     }
 
     @Test
@@ -100,6 +106,7 @@ public class ArithmeticControllerTest {
                                 .accept(MediaType.APPLICATION_JSON)
                                 .content(requestContent))
                .andExpect(status().isOk())
-               .andExpect(content().json(expectedContent));
+               .andExpect(content().json(expectedContent))
+               .andDo(document("Arithmetic_div"));
     }
 }
