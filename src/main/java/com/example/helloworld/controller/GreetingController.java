@@ -26,7 +26,7 @@ import javax.validation.constraints.NotNull;
 public class GreetingController {
     @GetMapping(path = "/")
     @ApiOperation(value = "Top",
-            nickname = "Greeting_top",
+            nickname = "GreetingControllerTest_top",
             notes = "Get availability of the service.")
     public TopResponse top(@RequestParam(defaultValue = "PRODUCTION") @NonNull
                            @ApiParam(required = true, value = "Stage.") Stage stage) {
@@ -35,7 +35,7 @@ public class GreetingController {
 
     @PostMapping(path = "/greet")
     @ApiOperation(value = "Greet",
-            nickname = "Greeting_greet",
+            nickname = "GreetingControllerTest_greet",
             notes = "Get greeting message for the request.")
     @ApiResponses({
             @ApiResponse(code = 200, message = "OK"),
