@@ -21,6 +21,7 @@ import javax.validation.constraints.NotNull;
 public class ArithmeticController {
     @PostMapping(path = "/arith/add")
     @ApiOperation(value = "Add",
+            nickname = "Arithmetic_add",
             notes = "Add two values.")
     public ArithmeticResponse add(@RequestBody ArithmeticRequest request) {
         return new ArithmeticResponse(request.getValue1() + request.getValue2());
@@ -28,6 +29,7 @@ public class ArithmeticController {
 
     @PostMapping(path = "/arith/sub")
     @ApiOperation(value = "Subtract",
+            nickname = "Arithmetic_sub",
             notes = "Subtract one value from the other value.")
     public ArithmeticResponse sub(@RequestBody ArithmeticRequest request) {
         return new ArithmeticResponse(request.getValue1() - request.getValue2());
@@ -35,6 +37,7 @@ public class ArithmeticController {
 
     @PostMapping(path = "/arith/mul")
     @ApiOperation(value = "Multiple",
+            nickname = "Arithmetic_mul",
             notes = "Multiply two values.")
     public ArithmeticResponse mul(@RequestBody ArithmeticRequest request) {
         return new ArithmeticResponse(request.getValue1() * request.getValue2());
@@ -42,6 +45,7 @@ public class ArithmeticController {
 
     @PostMapping(path = "/arith/div")
     @ApiOperation(value = "Divide",
+            nickname = "Arithmetic_div",
             notes = "Divide one value by the other value.")
     @ApiResponses({
             @ApiResponse(code = 200, message = "OK"),
