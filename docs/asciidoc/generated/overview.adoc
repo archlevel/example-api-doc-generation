@@ -1,0 +1,38 @@
+= API Specification of Hello World
+
+
+[[_overview]]
+== Overview
+API document of Hello World service
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : dayflower
+__Contact Email__ : @dayflower
+
+
+=== License information
+[%hardbreaks]
+__License__ : PUBLIC DOMAIN
+__Terms of service__ : http://example.com/
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost
+__BasePath__ : /
+
+
+=== Tags
+
+* Arithmetic Calculation : Provides several basic arithmetic function.
+* Greeting : Provides greeting methods.
+
+
+

@@ -1,0 +1,488 @@
+
+[[_paths]]
+== Resources
+
+[[_arithmetic_calculation_resource]]
+=== Arithmetic Calculation
+Provides several basic arithmetic function.
+
+
+[[_arithmeticcontrollertest_add]]
+==== Add
+....
+POST /arith/add
+....
+
+
+===== Description
+Add two values.
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**request** +
+__required__|request|<<_arithmeticrequest,ArithmeticRequest>>
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_arithmeticresponse,ArithmeticResponse>>
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json;charset=UTF-8`
+
+
+===== Example HTTP request
+
+[source,http,options="nowrap"]
+----
+POST /arith/add HTTP/1.1
+Content-Type: application/json
+Content-Length: 34
+
+{
+  "value1" : 1,
+  "value2" : 2
+}
+----
+
+
+===== Example HTTP response
+
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 18
+
+{
+  "result" : 3
+}
+----
+
+
+===== Example Curl request
+
+[source,bash]
+----
+$ curl 'http://example.com/arith/add' -i -X POST -H 'Content-Type: application/json' -d '{
+  "value1" : 1,
+  "value2" : 2
+}'
+----
+
+
+[[_arithmeticcontrollertest_div]]
+==== Divide
+....
+POST /arith/div
+....
+
+
+===== Description
+Divide one value by the other value.
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**request** +
+__required__|request|<<_arithmeticrequest,ArithmeticRequest>>
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_arithmeticresponse,ArithmeticResponse>>
+|**400**|Bad Request|<<_arithmeticcontroller_badrequestresponse,ArithmeticController.BadRequestResponse>>
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json;charset=UTF-8`
+
+
+===== Example HTTP request
+
+[source,http,options="nowrap"]
+----
+POST /arith/div HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Content-Length: 35
+
+{
+  "value1" : 35,
+  "value2" : 5
+}
+----
+
+
+===== Example HTTP response
+
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 18
+
+{
+  "result" : 7
+}
+----
+
+
+===== Example Curl request
+
+[source,bash]
+----
+$ curl 'http://example.com/arith/div' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '{
+  "value1" : 35,
+  "value2" : 5
+}'
+----
+
+
+[[_arithmeticcontrollertest_mul]]
+==== Multiple
+....
+POST /arith/mul
+....
+
+
+===== Description
+Multiply two values.
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**request** +
+__required__|request|<<_arithmeticrequest,ArithmeticRequest>>
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_arithmeticresponse,ArithmeticResponse>>
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json;charset=UTF-8`
+
+
+===== Example HTTP request
+
+[source,http,options="nowrap"]
+----
+POST /arith/mul HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Content-Length: 34
+
+{
+  "value1" : 3,
+  "value2" : 5
+}
+----
+
+
+===== Example HTTP response
+
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 19
+
+{
+  "result" : 15
+}
+----
+
+
+===== Example Curl request
+
+[source,bash]
+----
+$ curl 'http://example.com/arith/mul' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '{
+  "value1" : 3,
+  "value2" : 5
+}'
+----
+
+
+[[_arithmeticcontrollertest_sub]]
+==== Subtract
+....
+POST /arith/sub
+....
+
+
+===== Description
+Subtract one value from the other value.
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**request** +
+__required__|request|<<_arithmeticrequest,ArithmeticRequest>>
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_arithmeticresponse,ArithmeticResponse>>
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json;charset=UTF-8`
+
+
+===== Example HTTP request
+
+[source,http,options="nowrap"]
+----
+POST /arith/sub HTTP/1.1
+Content-Type: application/json;charset=UTF-8
+Content-Length: 34
+
+{
+  "value1" : 1,
+  "value2" : 2
+}
+----
+
+
+===== Example HTTP response
+
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 19
+
+{
+  "result" : -1
+}
+----
+
+
+===== Example Curl request
+
+[source,bash]
+----
+$ curl 'http://example.com/arith/sub' -i -X POST -H 'Content-Type: application/json;charset=UTF-8' -d '{
+  "value1" : 1,
+  "value2" : 2
+}'
+----
+
+
+[[_greeting_resource]]
+=== Greeting
+Provides greeting methods.
+
+
+[[_greetingcontrollertest_top]]
+==== Top
+....
+GET /
+....
+
+
+===== Description
+Get availability of the service.
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Query**|**stage** +
+__required__|Stage.|enum (DEVELOPING, STAGING, PRODUCTION)|`"PRODUCTION"`
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_topresponse,TopResponse>>
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json;charset=UTF-8`
+
+
+===== Example HTTP request
+
+[source,http,options="nowrap"]
+----
+GET /?stage=DEVELOPING HTTP/1.1
+
+----
+
+
+===== Example HTTP response
+
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 20
+
+{
+  "alive" : true
+}
+----
+
+
+===== Example Curl request
+
+[source,bash]
+----
+$ curl 'http://example.com/?stage=DEVELOPING' -i
+----
+
+
+[[_greetingcontrollertest_greet]]
+==== Greet
+....
+POST /greet
+....
+
+
+===== Description
+Get greeting message for the request.
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**request** +
+__required__|request|<<_greetingrequest,GreetingRequest>>
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_greetingresponse,GreetingResponse>>
+|**400**|Bad Request|<<_greetingcontroller_badrequestresponse,GreetingController.BadRequestResponse>>
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json;charset=UTF-8`
+
+
+===== Example HTTP request
+
+[source,http,options="nowrap"]
+----
+POST /greet HTTP/1.1
+Content-Type: application/json
+Content-Length: 45
+
+{
+  "title" : "Mr.",
+  "name" : "dayflower"
+}
+----
+
+
+===== Example HTTP response
+
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 41
+
+{
+  "message" : "Hello, Mr. dayflower!"
+}
+----
+
+
+===== Example Curl request
+
+[source,bash]
+----
+$ curl 'http://example.com/greet' -i -X POST -H 'Content-Type: application/json' -d '{
+  "title" : "Mr.",
+  "name" : "dayflower"
+}'
+----
+
+
+
