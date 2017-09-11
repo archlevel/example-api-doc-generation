@@ -1,13 +1,10 @@
 package com.example.helloworld.controller;
 
-import com.example.helloworld.configuration.RestDocsConfiguration;
 import lombok.val;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -19,8 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(GreetingController.class)
-@AutoConfigureRestDocs(outputDir = "build/snippets", uriHost = "example.com", uriPort = 80)
-@Import(RestDocsConfiguration.class)
+@GenerateApiUsageExample
 @SuppressWarnings("SingleCharacterStringConcatenation")
 public class GreetingControllerTest {
     @Autowired
