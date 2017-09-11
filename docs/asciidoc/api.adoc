@@ -1,0 +1,9 @@
+:numbered:
+:toc: right
+:toclevels: 3
+
+include::generated/overview.adoc[]
+
+include::generated/definitions.adoc[]
+
+include::generated/paths.adoc[]
